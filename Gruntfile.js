@@ -100,7 +100,9 @@ var overrides      = require('./core/server/overrides'),
             // more information.
             jshint: {
                 options: {
-                    jshintrc: '.jshintrc'
+                    jshintrc: '.jshintrc',
+                    reporter: 'checkstyle',
+                    reporterOutput: 'jshint-checkstyle-result.xml'
                 },
 
                 server: [
@@ -116,7 +118,9 @@ var overrides      = require('./core/server/overrides'),
 
             jscs: {
                 options: {
-                    config: true
+                    config: true,
+                    reporter: 'checkstyle',
+                    reporterOutput: 'jscs-checkstyle-result.xml'
                 },
 
                 server: {
