@@ -140,7 +140,7 @@ var overrides      = require('./core/server/overrides'),
             mochacli: {
                 options: {
                     ui: 'bdd',
-                    reporter: grunt.option('reporter') || 'spec',
+                    reporter: grunt.option('reporter') || 'spec-xunit-file',
                     timeout: '30000',
                     save: grunt.option('reporter-output'),
                     require: ['core/server/overrides']
@@ -149,9 +149,19 @@ var overrides      = require('./core/server/overrides'),
                 // #### All Unit tests
                 unit: {
                     src: [
-                        'core/test/unit/**/*_spec.js',
+                        'core/test/unit/**/*_spec.js'
+                    ],
+                    options: {
+                        env: {XUNIT_FILE: 'unit-test-xunit.xml'}
+                    }
+                },
+                unit_server: {
+                    src: [
                         'core/server/apps/**/tests/*_spec.js'
-                    ]
+                    ],
+                    options: {
+                        env: {XUNIT_FILE: 'unit-server-xunit.xml'}
+                    }
                 },
 
                 // #### All Integration tests
@@ -159,21 +169,30 @@ var overrides      = require('./core/server/overrides'),
                     src: [
                         'core/test/integration/**/*_spec.js',
                         'core/test/integration/*_spec.js'
-                    ]
+                    ],
+                    options: {
+                        env: {XUNIT_FILE: 'integration-test-xunit.xml'}
+                    }
                 },
 
                 // #### All Route tests
                 routes: {
                     src: [
                         'core/test/functional/routes/**/*_spec.js'
-                    ]
+                    ],
+                    options: {
+                        env: {XUNIT_FILE: 'route-test-xunit.xml'}
+                    }
                 },
 
                 // #### All Module tests
                 module: {
                     src: [
                         'core/test/functional/module/**/*_spec.js'
-                    ]
+                    ],
+                    options: {
+                        env: {XUNIT_FILE: 'module-test-xunit.xml'}
+                    }
                 },
 
                 // #### Run single test (src is set dynamically, see grunt task 'test')
@@ -547,7 +566,7 @@ var overrides      = require('./core/server/overrides'),
         // Unit tests do **not** touch the database.
         // A coverage report can be generated for these tests using the `grunt test-coverage` task.
         grunt.registerTask('test-unit', 'Run unit tests (mocha)',
-            ['test-setup', 'mochacli:unit']
+            ['test-setup', 'mochacli:unit', 'mochacli:unit_server']
         );
 
         // ### Integration tests *(sub task)*
