@@ -155,7 +155,7 @@ var overrides      = require('./core/server/overrides'),
                     src: [
                         'core/test/unit/**/*_spec.js',
                         'core/server/apps/**/tests/*_spec.js'
-                    ]
+                    ],
                 },
 
                 // #### All Integration tests
