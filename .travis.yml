@@ -30,7 +30,7 @@ matrix:
   include:
     - node_js: "4"
       env: TEST_SUITE=lint
-  fast_finish: true
+  fast_finish: false
 
 branches:
   except:
@@ -38,35 +38,16 @@ branches:
 
 before_install:
   - if [ $DB == "mysql" ]; then mysql -e 'create database ghost_testing'; fi
+  - mkdir -p $HOME/bin
+  - curl -s https://testspace-client.s3.amazonaws.com/testspace-linux-dev.tgz | tar -zxvf- -C $HOME/bin
+  - testspace config url http://open.stridespace.com
 
 install:
   - yarn
   - if [ "$DB" == "sqlite3" ]; then yarn add --force sqlite3; fi # fix sqlite caching issues
 
 after_success:
-  - |
-      if [ "$DB" != "sqlite3" ] || [ "$TRAVIS_NODE_VERSION" != "4" ] || [[ "$TRAVIS_PULL_REQUEST_BRANCH" != *"greenkeeper"* ]]; then
-        exit 0
-      fi
-      git clone -b "$TRAVIS_PULL_REQUEST_BRANCH" "https://"$PUSH_TOKEN"@github.com/"$TRAVIS_REPO_SLUG".git" repo && cd repo
-      git log --name-status HEAD^..HEAD | grep "update" || exit 0
-      yarn
-      git config --global user.email "github@ghost.org"
-      git config --global user.name "TryGhost-Travis"
-      git config --global push.default simple
-      git add yarn.lock
-      git commit -m "chore: yarn.lock"
-      git push
-  - |
-      if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then
-        if [[ "$DB" = "sqlite3" && "$TRAVIS_NODE_VERSION" = "4" ]]; then
-          echo "Generate coverage..."
-          grunt coverage
-          npm install -g codeclimate-test-reporter
-          codeclimate-test-reporter < core/test/coverage/unit/lcov.info
-        else
-          echo "False DB and NODE_VERSION. No coverage generated."
-        fi
-      else
-        echo "This is a PR. No coverage generated."
-      fi
+  - echo "after success"
+
+after_script:
+  - echo "after script"
