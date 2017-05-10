@@ -48,5 +48,5 @@ install:
 
 after_script:
   - if [ "${TEST_SUITE}" != "lint" ]; then
-      testspace [Node-$TRAVIS_NODE_VERSION-$DB/]*-test-xunit.xml{core/test} [Node-$TRAVIS_NODE_VERSION-$DB/]*-server-xunit.xml{core};
+      testspace [Node-$TRAVIS_NODE_VERSION-$DB/]*-xunit.xml{core};
     fi
