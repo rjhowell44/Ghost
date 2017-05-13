@@ -7,6 +7,10 @@
 // **Debug tip:** If you have any problems with any Grunt tasks, try running them with the `--verbose` command
 
 // jshint unused: false
+
+// enable heap profiling
+var heapProfiler   = require('heap-metrics');
+
 var overrides      = require('./core/server/overrides'),
     config         = require('./core/server/config'),
     utils          = require('./core/server/utils'),
