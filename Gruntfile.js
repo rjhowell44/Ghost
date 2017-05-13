@@ -8,8 +8,8 @@
 
 // jshint unused: false
 
-// enable heap profiling
-var heapProfiler   = require('heap-metrics'),
+// enable heap profiling first
+var heapMetrics    = require('heap-metrics'),
     overrides      = require('./core/server/overrides'),
     config         = require('./core/server/config'),
     utils          = require('./core/server/utils'),
@@ -36,6 +36,8 @@ var heapProfiler   = require('heap-metrics'),
         // Find all of the task which start with `grunt-` and load them, rather than explicitly declaring them all
         require('matchdep').filterDev(['grunt-*', '!grunt-cli']).forEach(grunt.loadNpmTasks);
 
+        heapMetrics.DumpHeapMetrics();
+        
         var cfg = {
             // #### Common paths used by tasks
             paths: {
