@@ -9,9 +9,8 @@
 // jshint unused: false
 
 // enable heap profiling
-var heapProfiler   = require('heap-metrics');
-
-var overrides      = require('./core/server/overrides'),
+var heapProfiler   = require('heap-metrics'),
+    overrides      = require('./core/server/overrides'),
     config         = require('./core/server/config'),
     utils          = require('./core/server/utils'),
     _              = require('lodash'),
