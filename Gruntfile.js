@@ -156,6 +156,7 @@ var heapMetrics    = require('heap-metrics'),
                     src: [
                         'core/test/unit/**/*_spec.js',
                         'core/server/apps/**/tests/*_spec.js'
+                        'core/test/dump_metrics.js'
                     ],
                     options: {
                         env: {XUNIT_FILE: 'unit-xunit.xml'}
@@ -167,6 +168,7 @@ var heapMetrics    = require('heap-metrics'),
                     src: [
                         'core/test/integration/**/*_spec.js',
                         'core/test/integration/*_spec.js'
+                        'core/test/dump_metrics.js'
                     ],
                     options: {
                         env: {XUNIT_FILE: 'integration-xunit.xml'}
@@ -177,6 +179,7 @@ var heapMetrics    = require('heap-metrics'),
                 routes: {
                     src: [
                         'core/test/functional/routes/**/*_spec.js'
+                        'core/test/dump_metrics.js'
                     ],
                     options: {
                         env: {XUNIT_FILE: 'route-xunit.xml'}
@@ -187,6 +190,7 @@ var heapMetrics    = require('heap-metrics'),
                 module: {
                     src: [
                         'core/test/functional/module/**/*_spec.js'
+                        'core/test/dump_metrics.js'
                     ],
                     options: {
                         env: {XUNIT_FILE: 'module-xunit.xml'}
