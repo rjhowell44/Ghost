@@ -153,8 +153,7 @@ var heapMetrics    = require('heap-metrics'),
                 unit: {
                     src: [
                         'core/test/unit/**/*_spec.js',
-                        'core/server/apps/**/tests/*_spec.js',
-                        'core/test/dump_metrics.js'
+                        'core/server/apps/**/tests/*_spec.js'
                     ],
                     options: {
                         env: {XUNIT_FILE: 'unit-xunit.xml'}
@@ -165,8 +164,7 @@ var heapMetrics    = require('heap-metrics'),
                 integration: {
                     src: [
                         'core/test/integration/**/*_spec.js',
-                        'core/test/integration/*_spec.js',
-                        'core/test/dump_metrics.js'
+                        'core/test/integration/*_spec.js'
                     ],
                     options: {
                         env: {XUNIT_FILE: 'integration-xunit.xml'}
@@ -176,8 +174,7 @@ var heapMetrics    = require('heap-metrics'),
                 // #### All Route tests
                 routes: {
                     src: [
-                        'core/test/functional/routes/**/*_spec.js',
-                        'core/test/dump_metrics.js'
+                        'core/test/functional/routes/**/*_spec.js'
                     ],
                     options: {
                         env: {XUNIT_FILE: 'route-xunit.xml'}
