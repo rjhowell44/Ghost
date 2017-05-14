@@ -5,4 +5,4 @@ describe('DumpHeapMetrics', function () {
   it('should return true', function () {
     assert(heapMetrics.DumpHeapMetrics());
   });
-})
+});
