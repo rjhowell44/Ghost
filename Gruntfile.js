@@ -35,9 +35,7 @@ var heapMetrics    = require('heap-metrics'),
         //
         // Find all of the task which start with `grunt-` and load them, rather than explicitly declaring them all
         require('matchdep').filterDev(['grunt-*', '!grunt-cli']).forEach(grunt.loadNpmTasks);
-
-        heapMetrics.DumpHeapMetrics();
-        
+       
         var cfg = {
             // #### Common paths used by tasks
             paths: {
@@ -155,7 +153,7 @@ var heapMetrics    = require('heap-metrics'),
                 unit: {
                     src: [
                         'core/test/unit/**/*_spec.js',
-                        'core/server/apps/**/tests/*_spec.js'
+                        'core/server/apps/**/tests/*_spec.js',
                         'core/test/dump_metrics.js'
                     ],
                     options: {
@@ -167,7 +165,7 @@ var heapMetrics    = require('heap-metrics'),
                 integration: {
                     src: [
                         'core/test/integration/**/*_spec.js',
-                        'core/test/integration/*_spec.js'
+                        'core/test/integration/*_spec.js',
                         'core/test/dump_metrics.js'
                     ],
                     options: {
@@ -178,7 +176,7 @@ var heapMetrics    = require('heap-metrics'),
                 // #### All Route tests
                 routes: {
                     src: [
-                        'core/test/functional/routes/**/*_spec.js'
+                        'core/test/functional/routes/**/*_spec.js',
                         'core/test/dump_metrics.js'
                     ],
                     options: {
@@ -189,7 +187,7 @@ var heapMetrics    = require('heap-metrics'),
                 // #### All Module tests
                 module: {
                     src: [
-                        'core/test/functional/module/**/*_spec.js'
+                        'core/test/functional/module/**/*_spec.js',
                         'core/test/dump_metrics.js'
                     ],
                     options: {
