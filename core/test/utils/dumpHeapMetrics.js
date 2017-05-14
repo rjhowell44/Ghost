@@ -1,8 +1,8 @@
 var heapMetrics = require('heap-metrics'),
-    assert = require('assert');
+    expect = require('expect');
 
 describe('DumpHeapMetrics', function () {
     it('should return true', function () {
-        assert(heapMetrics.DumpHeapMetrics());
+        expect((heapMetrics.DumpHeapMetrics())).to.equal(true);
     });
 });
