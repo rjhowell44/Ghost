@@ -156,7 +156,7 @@ var heapMetrics    = require('heap-metrics'),
                         'core/test/utils/startCpuProfile',
                         'core/test/unit/**/*_spec.js',
                         'core/server/apps/**/tests/*_spec.js',
-                        'core/test/utils/stopCpuProfile.js,
+                        'core/test/utils/stopCpuProfile.js',
                         'core/test/utils/dumpHeapMetrics.js'
                     ],
                     options: {
