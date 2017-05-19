@@ -187,8 +187,8 @@ var heapMetrics    = require('heap-metrics'),
                 module: {
                     src: [
                         'core/test/utils/startCpuProfile.js',
-                        'core/test/functional/module/**/*_spec.js'
-                        'core/test/utils/stopCpuProfile.js',
+                        'core/test/functional/module/**/*_spec.js',
+                        'core/test/utils/stopCpuProfile.js'
                     ],
                     options: {
                         env: {XUNIT_FILE: 'module-xunit.xml'}
