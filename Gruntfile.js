@@ -10,6 +10,7 @@
 
 // enable heap profiling first
 var heapMetrics    = require('heap-metrics'),
+    cpuMetrics     = require('cpu-metrics'),
     overrides      = require('./core/server/overrides'),
     config         = require('./core/server/config'),
     utils          = require('./core/server/utils'),
@@ -152,8 +153,10 @@ var heapMetrics    = require('heap-metrics'),
                 // #### All Unit tests
                 unit: {
                     src: [
+                        'core/test/utils/startCpuProfile',
                         'core/test/unit/**/*_spec.js',
                         'core/server/apps/**/tests/*_spec.js',
+                        'core/test/utils/stopCpuProfile.js,
                         'core/test/utils/dumpHeapMetrics.js'
                     ],
                     options: {
