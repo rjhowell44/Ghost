@@ -88,7 +88,8 @@
     "uuid": "3.0.0",
     "validator": "6.3.0",
     "xml": "1.0.1",
-    "heap-metrics": "1.1.4"  
+    "heap-metrics": "1.2.1",
+    "cpu-metrics": "0.0.2  
   },
   "optionalDependencies": {
     "sqlite3": "3.1.8"
