@@ -153,7 +153,7 @@ var heapMetrics    = require('heap-metrics'),
                 // #### All Unit tests
                 unit: {
                     src: [
-                        'core/test/utils/startCpuProfile',
+                        'core/test/utils/startCpuProfile.js',
                         'core/test/unit/**/*_spec.js',
                         'core/server/apps/**/tests/*_spec.js',
                         'core/test/utils/stopCpuProfile.js',
