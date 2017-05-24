@@ -51,5 +51,5 @@ install:
 
 after_script:
   - if [ "${TEST_SUITE}" != "lint" ]; then
-      testspace [Node-$TRAVIS_NODE_VERSION-$DB/]*-xunit.xml{core}  [Node-$TRAVIS_NODE_VERSION-$DB/]$HOME/bin/heap-metrics.html{$HOME/bin/heap-metrics.csv} [Node-$TRAVIS_NODE_VERSION-$DB/]$HOME/bin/cpu-metrics.html +$HOME/bin/cpu-metrics.html
+      testspace [Node-$TRAVIS_NODE_VERSION-$DB/]*-xunit.xml{core}  [Node-$TRAVIS_NODE_VERSION-$DB/]$HOME/bin/heap-metrics.html{$HOME/bin/heap-metrics.csv} [Node-$TRAVIS_NODE_VERSION-$DB/]$HOME/bin/cpu-metrics.html +$HOME/bin/cpu-metrics.html;
     fi
