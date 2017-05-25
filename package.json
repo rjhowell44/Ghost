@@ -40,7 +40,7 @@
     "connect-slashes": "1.3.1",
     "cookie-session": "1.2.0",
     "cors": "2.8.3",
-    "cpu-metrics": "0.0.7",
+    "cpu-metrics": "0.0.8",
     "csv-parser": "1.11.0",
     "debug": "2.6.6",
     "downsize": "0.0.8",
